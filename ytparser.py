@@ -20,7 +20,7 @@ def yt_data(api_key, channel_name):
     view_count = []
     comment_count = []
     next_page_token = ""
-    while (1):
+    while True:
         url = f"https://www.googleapis.com/youtube/v3/search?key={api_key}&channelId={channel_id}&part=snippet,id&order=date&maxResults=50&pageToken={next_page_token}"
         response = requests.get(url)
         data = response.json()
